@@ -19,7 +19,7 @@ var (
 	green   = color.RGBA{R: 10, G: 255, B: 50, A: 255}
 	boids   [boidCound]*Boid
 	boidMap [screenWidth + 1][screenHeigh + 1]int
-	lock    = sync.Mutex{}
+	rWlock  = sync.RWMutex{}
 )
 
 func update(screen *ebiten.Image) error {
